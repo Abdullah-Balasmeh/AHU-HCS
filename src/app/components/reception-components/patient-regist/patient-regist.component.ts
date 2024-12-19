@@ -184,6 +184,11 @@ private getEmpName(id: string) {
       this.setError('يرجى إدخال رقم المريض/ة بشكل صحيح');
       return;
     }
+    if (this.newPatient.status === '0' && this.newPatient.type === 'طالب') {
+      alert('لا يمكن إضافة طالب مؤجل');
+      this.resetForm();
+      return;
+    }
 
     const patientId = this.registForm.get('patientId')?.value ?? '';
     const state = this.registForm.get('patientState')?.value ?? '';
