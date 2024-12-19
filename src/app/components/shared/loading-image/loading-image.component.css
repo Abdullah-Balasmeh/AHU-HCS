@@ -4,11 +4,3 @@ svg rect {
     fill: white;
     height: 20px;
 }
-.btn {
-    width: 80%; /* Set the button width less than 100% */
-    padding: 10px 15px;
-    font-size: 20px;
-    font-weight: bold;
-    margin: 0 auto; /* Center the button horizontally */
-    display: block; /* Ensures the button behaves like a block element */
-}

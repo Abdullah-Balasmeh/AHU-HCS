@@ -31,7 +31,7 @@
             autocomplete="off">
             <div id="search-container" (click)="checkPatient()">
                 <ng-container  *ngIf="search(); else notSearch">
-                    <div class="loading"><app-loading-image></app-loading-image></div>
+                    <div class="btn text-type primaryColor search-btn"><app-loading-image></app-loading-image></div>
                 </ng-container>
                 <ng-template #notSearch >
                     <button type="button" class="btn text-type primaryColor search-btn" 
@@ -87,7 +87,7 @@
     <p *ngIf="success()" class="successColor">تم إضافة المريض/ة بنجاح</p>
     <div class="margin">
         <ng-container *ngIf="rigest(); else notRigest">
-            <app-loading-image ></app-loading-image>
+        <div class="btn primaryColor"><app-loading-image ></app-loading-image></div> 
         </ng-container>
         <ng-template #notRigest >
             <button type="btn" class="btn primaryColor">تسجيل</button>

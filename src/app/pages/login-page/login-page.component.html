@@ -44,7 +44,7 @@
             }
             <div>
                 <ng-container *ngIf="isLoading() && !errorMessage(); else notLoading">
-                    <app-loading-image></app-loading-image>
+                <div class="btn primaryColor"><app-loading-image></app-loading-image></div> 
                 </ng-container>
                 <ng-template #notLoading>
                     <button type="btn" class="btn primaryColor">
