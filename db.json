@@ -1,0 +1,253 @@
+{
+  "roles": [
+    {
+      "roleID": "1",
+      "roleName": "Admin"
+    },
+    {
+      "roleID": "2",
+      "roleName": "Manager"
+    },
+    {
+      "roleID": "3",
+      "roleName": "Receptionist"
+    },
+    {
+      "roleID": "4",
+      "roleName": "Doctor"
+    },
+    {
+      "roleID": "5",
+      "roleName": "NurseM"
+    },
+    {
+      "roleID": "6",
+      "roleName": "NurseF"
+    },
+    {
+      "roleID": "7",
+      "roleName": "Pharmacist"
+    }
+  ],
+  "users": [
+    {
+      "id": "11",
+      "name": "Abdullah",
+      "password": "1234",
+      "roleID": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "id": "22",
+      "name": "Yazeed",
+      "password": "1234",
+      "roleID": [
+        "1"
+      ]
+    },
+    {
+      "id": "33",
+      "name": "Yousef",
+      "password": "1234",
+      "roleID": [
+        "2"
+      ]
+    },
+    {
+      "id": "44",
+      "name": "Khalid",
+      "password": "1234",
+      "roleID": [
+        "2",
+        "4"
+      ]
+    },
+    {
+      "id": "55",
+      "name": "Lith",
+      "password": "1234",
+      "roleID": [
+        "5"
+      ]
+    },
+    {
+      "id": "66",
+      "name": "Ahmad",
+      "password": "1234",
+      "roleID": [
+        "6"
+      ]
+    }
+  ],
+  "students": [
+    {
+      "id": "120200612056",
+      "name": "عبدالله عدنان عبداللطيف بلاسمه",
+      "gender": "Male",
+      "status": "1"
+    },
+    {
+      "id": "120210622086",
+      "name": "يزيد عمر عبدالله سمرين",
+      "gender": "Male",
+      "status": "1"
+    },
+    {
+      "id": "120210622091",
+      "name": "خالد حسين علي الصمادي",
+      "gender": "Male",
+      "status": "1"
+    },
+    {
+      "id": "120210622092",
+      "name": "يوسف عبدالله عثمان محمود",
+      "gender": "Male",
+      "status": "0"
+    },
+    {
+      "id": "120200612066",
+      "name": "اعتماد فرحان نزال الجازي",
+      "gender": "Female",
+      "status": "1"
+    },
+    {
+      "id": "120210612005",
+      "name": "حنين راجح سعيد الزكارنة",
+      "gender": "Female",
+      "status": "1"
+    }
+  ],
+  "employees": [
+    {
+      "id": "120200612001",
+      "name": "محمد أحمد علي",
+      "gender": "Male",
+      "status": "1"
+    },
+    {
+      "id": "120210622002",
+      "name": "فاطمة عبد الله حسين",
+      "gender": "Female",
+      "status": "1"
+    },
+    {
+      "id": "120210622003",
+      "name": "علي خالد محمود",
+      "gender": "Male",
+      "status": "0"
+    },
+    {
+      "id": "120200612004",
+      "name": "سارة عمر يوسف",
+      "gender": "Female",
+      "status": "1"
+    },
+    {
+      "id": "120210612005",
+      "name": "أحمد سعيد محمد",
+      "gender": "Male",
+      "status": "1"
+    },
+    {
+      "id": "120210612006",
+      "name": "نور خالد أحمد",
+      "gender": "Female",
+      "status": "1"
+    }
+  ],
+  "patients": [
+    {
+      "id": "120200612056",
+      "name": "عبدالله عدنان عبداللطيف بلاسمه",
+      "gender": "Male",
+      "state": "طوارئ",
+      "status": "1",
+      "type": "طالب",
+      "date": {
+        "enterDate": "",
+        "leaveDate": ""
+      },
+      "medicalRecord": {
+        "bloodType": "",
+        "medicalHistory": [],
+        "allergies": [],
+        "medications": [],
+        "clinicProcedures": [],
+        "emergencyProcedures": {
+          "BP": {
+            "BP-Up": "",
+            "BP-Down": ""
+          },
+          "temp": "",
+          "pulse": "",
+          "resp": "",
+          "procedures": []
+        },
+        "followReadings": {
+          "BP": [],
+          "diabetes": []
+        },
+        "prescription": {
+          "medicalCondition": [],
+          "medicine": [],
+          "dosage": ""
+        },
+        "medicalReport": {
+          "reportName": "",
+          "medicalCondition": [],
+          "recommendations": []
+        }
+      }
+    },
+    {
+      "id": "120200612056",
+      "name": "عبدالله عدنان عبداللطيف بلاسمه",
+      "gender": "Male",
+      "state": "عيادة",
+      "status": "1",
+      "type": "طالب",
+      "date": {
+        "enterDate": "",
+        "leaveDate": ""
+      },
+      "medicalRecord": {
+        "bloodType": "",
+        "medicalHistory": [],
+        "allergies": [],
+        "medications": [],
+        "clinicProcedures": [],
+        "emergencyProcedures": {
+          "BP": {
+            "BP-Up": "",
+            "BP-Down": ""
+          },
+          "temp": "",
+          "pulse": "",
+          "resp": "",
+          "procedures": []
+        },
+        "followReadings": {
+          "BP": [],
+          "diabetes": []
+        },
+        "prescription": {
+          "medicalCondition": [],
+          "medicine": [],
+          "dosage": ""
+        },
+        "medicalReport": {
+          "reportName": "",
+          "medicalCondition": [],
+          "recommendations": []
+        }
+      }
+    }
+  ]
+}
