@@ -29,8 +29,16 @@
             required
             oninput="this.value = this.value.replace(/[^0-9]/g, '');"
             autocomplete="off">
-        <button type="button" class="btn text-type primaryColor" id="search-btn"
-            (click)="checkPatient()">بحث</button>
+            <div id="search-container" (click)="checkPatient()">
+                <ng-container  *ngIf="search(); else notSearch">
+                    <div class="loading"><app-loading-image></app-loading-image></div>
+                </ng-container>
+                <ng-template #notSearch >
+                    <button type="button" class="btn text-type primaryColor search-btn" 
+                    >بحث</button>
+                </ng-template>
+            </div>
+
             @if(error){
                 <p class="errorColor">{{errorMessage}}</p>
 
@@ -77,7 +85,7 @@
         </label>
     </div>
     <p *ngIf="success()" class="successColor">تم إضافة المريض/ة بنجاح</p>
-    <div>
+    <div class="margin">
         <ng-container *ngIf="rigest(); else notRigest">
             <app-loading-image ></app-loading-image>
         </ng-container>

@@ -9,6 +9,7 @@
             <th>الإجراءات</th>
         </tr>
     </thead>
+    <div class="loading" *ngIf="isLoading"><app-loading-image></app-loading-image></div>
     <tbody>
         <tr *ngFor="let patient of patients; let index = index">
             <td>{{ index + 1 }}</td>

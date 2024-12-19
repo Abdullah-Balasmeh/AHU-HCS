@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { ApiService } from '../../../services/api.service';
 import { CommonModule } from '@angular/common';
 import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
+import { LoadingImageComponent } from "../../shared/loading-image/loading-image.component";
 
 @Component({
   selector: 'app-reception-table',
   standalone: true,
-  imports: [CommonModule, EditDialogComponent],
+  imports: [CommonModule, EditDialogComponent, LoadingImageComponent],
   templateUrl: './reception-table.component.html',
   styleUrls: ['./reception-table.component.css'],
 })
@@ -14,7 +15,7 @@ export class ReceptionTableComponent {
   patients: any[] = []; // Holds the patient data
   selectedPatient: any = null; // Holds the patient selected for editing
   isEditModalOpen = false; // Tracks whether the edit modal is open
-
+  isLoading = true;
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
@@ -23,7 +24,10 @@ export class ReceptionTableComponent {
 
   loadPatients(): void {
     this.apiService.getPatients().subscribe({
-      next: (data) => (this.patients = data),
+      next: (data) => {
+        this.patients = data;
+        this.isLoading = false;
+      },
       error: (err) => console.error('Error loading patients:', err),
     });
   }

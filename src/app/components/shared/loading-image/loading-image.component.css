@@ -4,7 +4,7 @@ svg rect {
     fill: white;
     height: 20px;
 }
-button.btn {
+.btn {
     width: 80%; /* Set the button width less than 100% */
     padding: 10px 15px;
     font-size: 20px;

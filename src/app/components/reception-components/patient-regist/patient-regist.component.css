@@ -4,24 +4,29 @@
     padding: 10px 15px;
     font-size: 20px;
     font-weight: bold;
-    margin: 40px auto; /* Center the button horizontally */
+    margin: 0 auto; /* Center the button horizontally */
     display: block; /* Ensures the button behaves like a block element */
 }
 .margin{
     margin-bottom: 40px;
 }
-#search-btn {
+#search-container {
     width: max-content;
     display: inline-block;
-    margin: 0 5px 0 0;
-    padding: 5px 5px;
+}
+
+.search-btn{
+    padding: 7px 10px 7px 20px;
+}
+.loading{
+    font-size: 20px;
+    width: max-content;
 }
 
 .successColor{
     justify-self: center;
     align-self: center;
-    margin-bottom: -30px;
-    margin-top: 10px;
+    margin-bottom: 10px;
 }
 input[type="text"] {
     min-width: 35%;

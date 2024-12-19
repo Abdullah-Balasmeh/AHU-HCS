@@ -17,6 +17,7 @@ export class PatientRegistComponent {
   private readonly apiService = inject(ApiService);
   private readonly destroyRef = inject(DestroyRef);
   rigest = signal(false);
+  search = signal(false);
   success = signal(false);
   errorMessage = '';
   error = false;
@@ -74,52 +75,74 @@ export class PatientRegistComponent {
   }
 
   checkPatient() {
+    if (this.search()) return; // Prevent multiple simultaneous clicks
+    this.search.set(true);
+
     const patientId = this.registForm.get('patientId')?.value;
     const patientType = this.registForm.get('patientType')?.value;
 
     if (!patientId) {
-      this.setError(
-        patientType === 'طالب' ? 'يرجى إدخال رقم الطالب' : 'يرجى إدخال رقم الموظف'
-      );
-      return;
+        this.setError(patientType === 'طالب' ? 'يرجى إدخال رقم الطالب' : 'يرجى إدخال رقم الموظف');
+        this.search.set(false); // Reset search state
+        return;
     }
 
-    if (patientType === 'طالب' && patientId.length === 12) {
-      this.getStudentName(patientId);
-    } else if (patientType === 'طالب' && patientId.length < 12) {
-      this.setError('رقم الطالب يجب أن يتكون من 12 رقم');
-    } else if (patientType === 'موظف' && patientId.length < 2) {
-      this.setError('رقم الموظف يجب أن يتكون من رقمان او أكثر');
+    if (patientType === 'طالب') {
+        if (patientId.length === 12) {
+            this.getStudentName(patientId);
+        } else {
+            this.setError('رقم الطالب يجب أن يتكون من 12 رقم');
+            this.search.set(false);
+        }
     } else if (patientType === 'موظف') {
-      this.getEmpName(patientId);
+        if (patientId.length >= 2) {
+            this.getEmpName(patientId);
+        } else {
+            this.setError('رقم الموظف يجب أن يتكون من رقمان او أكثر');
+            this.search.set(false);
+        }
     }
-  }
+}
 
-  private getStudentName(id: string) {
+private getStudentName(id: string) {
     const subscription = this.apiService.getStudentById(id).subscribe({
-      next: (student) => {
-        if (student) {
-          this.clearError();
-          this.updatePatientDetails(student, 'طالب');
-        }
-      },
-      error: () => this.setError('الطالب غير موجود'),
+        next: (student) => {
+            if (student) {
+                this.clearError();
+                this.updatePatientDetails(student, 'طالب');
+            } else {
+                this.setError('الطالب غير موجود');
+            }
+            this.search.set(false); // Reset search state
+        },
+        error: () => {
+            this.setError('الطالب غير موجود');
+            this.search.set(false); // Reset search state
+        },
     });
-    this.destroyRef.onDestroy(() => subscription.unsubscribe());
-  }
 
-  private getEmpName(id: string) {
-    const subscription = this.apiService.getEmpById(id).subscribe({
-      next: (emp) => {
-        if (emp) {
-          this.clearError();
-          this.updatePatientDetails(emp, 'موظف');
-        }
-      },
-      error: () => this.setError('الموظف غير موجود'),
-    });
     this.destroyRef.onDestroy(() => subscription.unsubscribe());
-  }
+}
+
+private getEmpName(id: string) {
+    const subscription = this.apiService.getEmpById(id).subscribe({
+        next: (emp) => {
+            if (emp) {
+                this.clearError();
+                this.updatePatientDetails(emp, 'موظف');
+            } else {
+                this.setError('الموظف غير موجود');
+            }
+            this.search.set(false); // Reset search state
+        },
+        error: () => {
+            this.setError('الموظف غير موجود');
+            this.search.set(false); // Reset search state
+        },
+    });
+
+    this.destroyRef.onDestroy(() => subscription.unsubscribe());
+}
 
   private updatePatientDetails(person: any, type: string) {
     this.registForm.patchValue({ patientName: person.name });
@@ -179,8 +202,12 @@ export class PatientRegistComponent {
       ...this.newPatient,
       id: patientId,
       state,
+      date: {
+        enterDate: formattedDate,
+        leaveDate: '',
+      },
     };
-
+    this.rigest.set(true);
     const subscription = this.apiService.addPatient(newPatient).subscribe({
       next: () => {
         this.success.set(true);
@@ -193,6 +220,7 @@ export class PatientRegistComponent {
   }
 
   private resetForm() {
+    this.rigest.set(false);
     this.registForm.reset({
       patientId: '',
       patientName: '',
