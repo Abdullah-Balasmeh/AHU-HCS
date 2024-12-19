@@ -1,0 +1,9 @@
+header .logo {
+    
+    position: absolute;
+    display: block;
+    width: 360px;
+    top: 0;
+    right: 0;
+    margin: 5px 3px;
+}

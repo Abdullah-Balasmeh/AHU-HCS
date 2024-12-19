@@ -1,0 +1,82 @@
+/* Modal container styling */
+#EditPatientFormModal {
+    position: fixed; /* Fixed position to ensure it's always in view */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for modal's size */
+    background-color: #fff; /* Add a semi-transparent overlay */
+    display: flex; /* Center the modal content */
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px; /* Smooth corners */
+    z-index: 1000;
+    width: 600px;
+}
+
+/* Modal content */
+.modal-content {
+    border: none;
+    position: relative;
+    width: 100%; /* Full width of the container */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5); /* Subtle shadow for better visibility */ /* Add padding for better content alignment */
+    overflow: hidden; /* Ensure no content spills out */
+}
+
+/* Modal header styling */
+.modal-header {
+    background: #4D95A7; /* Header background color */
+    color: white; /* Text color */
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px 15px 0 0; /* Rounded top corners */
+    font-size: 18px; /* Larger font size */
+    font-weight: bold;
+}
+
+/* Modal form styling */
+#editModalForm {
+    margin: 0 10px; /* Center the form */
+    width: 600px;
+}
+
+/* Footer button container */
+.footer-btn {
+    display: flex;
+    margin: 20px auto;
+    cursor: pointer;
+    justify-content: space-evenly;
+}
+
+/* Close button styling */
+.footer-btn .close {
+    background-color: gray;
+    transition: opacity 0.3s ease; /* Add hover transition */
+    max-width: 30%;
+    
+}
+
+.footer-btn .close:hover {
+    opacity: 0.8;
+}
+
+/* Form inputs */
+.input-box input {
+    min-width: fit-content;
+    padding: 8px;
+    background-color: #F0F0F0;
+    border: 1px solid #4D95A7;
+    border-radius: 10px;
+    outline: none;
+    font-size: 18px;
+}
+
+
+.footer-btn .btn, #loadingBtn {
+    width: 30%;
+    height: 60px;
+    max-width: 30%;
+    max-height: 60px;
+}

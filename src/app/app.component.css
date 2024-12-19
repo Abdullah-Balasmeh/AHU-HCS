@@ -1,0 +1,26 @@
+.logoutBtn{
+    height: 60px;
+    width: max-content;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    top: 20px;
+    left: 25px;
+    align-items: center;
+    justify-content: center;
+    background-color: #f44336; /* Red */
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+img{
+    align-self: center;
+    justify-self: center;
+}

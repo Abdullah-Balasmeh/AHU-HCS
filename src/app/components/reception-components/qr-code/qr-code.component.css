@@ -1,0 +1,13 @@
+/* QR style */
+
+#qr-code {
+    padding: 20px 0;
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+}
+
+img {
+    width: 250px; /* Set the size of the QR code */
+    height: 250px;
+}

@@ -1,0 +1,11 @@
+<div class="container">
+    <app-nav-tab (tabChange)="onTabChange($event)"></app-nav-tab>
+
+    <div>
+        <!-- Conditionally render components based on the selected tab -->
+        <app-patient-regist *ngIf="selectedTab === 'register-patient'"></app-patient-regist>
+        <app-reception-table *ngIf="selectedTab === 'medical-record'"></app-reception-table>
+        <app-qr-code *ngIf="selectedTab === 'attendance'"></app-qr-code>
+
+    </div>
+</div>
