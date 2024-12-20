@@ -92,7 +92,7 @@ body {
     font-family: inherit;
     font-size: 20px;
     font-weight: bold;
-    color: white;
+    color: #fafafa;
     border: 0;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -196,7 +196,7 @@ input[type='checkBox'] , input[type='radio']{
 /* Checked radio button styling */
 .radio-inputs .radio input:checked+.name {
     background-color: #4D95A7;
-    color: #F0F0F0;
+    color: #fafafa;
     font-weight: bold;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -213,7 +213,7 @@ table {
 
 thead {
     background-color: #4D95A7;
-    color: #F0F0F0;
+    color: #fafafa;
     font-weight: bold;
 }
 
@@ -317,7 +317,7 @@ row check Box */
     height: max-content;
     border: 1px;
     border-style: solid;
-    background-color: #F0F0F0;
+    background-color: #fafafa;
     border-color: #4D95A7;
     border-radius: 10px;
 }
@@ -344,7 +344,7 @@ row check Box */
 
 .check-inputs-box .check input:checked+.name {
     background-color: #4D95A7;
-    color: #E8E8E8;
+    color: #fafafa;
     font-weight: bold;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

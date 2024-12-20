@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, inject,signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { SharedService } from '../../services/shared.service';
+import { SharedService } from '../../../services/shared.service';
+
 
 @Component({
   selector: 'app-nav-bar',

@@ -4,9 +4,10 @@ import { CommonModule } from '@angular/common';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { HeaderComponent } from './components/header/header.component';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+
 import { SharedService } from './services/shared.service';
+import { HeaderComponent } from './components/main-component/header/header.component';
+import { NavBarComponent } from './components/main-component/nav-bar/nav-bar.component';
 
 @Component({
   selector: 'app-root',

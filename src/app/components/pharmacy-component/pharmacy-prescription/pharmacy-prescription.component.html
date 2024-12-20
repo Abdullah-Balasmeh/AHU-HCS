@@ -1,0 +1,37 @@
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>الاسم</th>
+            <th>الرقم الجامعي/الوظيفي</th>
+            <th>الحالة</th>
+            <th>الفئة</th>
+            <th>عرض</th>
+        </tr>
+    </thead>
+    <div class="primaryColor btn loading" *ngIf="isLoading"><app-loading-image></app-loading-image></div>
+    <tbody>
+        <tr *ngFor="let patient of filteredPatients; let index = index">
+            <td>{{ index + 1 }}</td>
+            <td>{{ patient.name }}</td>
+            <td>{{ patient.id }}</td>
+            <td>{{ patient.state }}</td>
+            <td>{{ patient.type }}</td>
+            <td>
+                <button
+                    class="table-btn"
+                    id="icon-edit"
+                    (click)="openPrescriptionDialog(patient)">
+                    <i class="bi bi-eye"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Prescription Dialog -->
+<app-prescription-dialog
+    *ngIf="showPrescriptionDialog"
+    [patient]="selectedPatient"
+    (close)="closeAll()">
+</app-prescription-dialog>
