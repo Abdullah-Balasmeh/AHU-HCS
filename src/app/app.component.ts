@@ -32,9 +32,9 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   ngAfterViewInit(): void {
     const userID = this.sharedService.getCurrentUserID();
 
-    if (!userID) {
-      this.router.navigate(['/login']);
-    }
+  if (!userID && !this.router.url.startsWith('/home')) {
+    this.router.navigate(['/home']);
+  }
   }
 
   isLoginPage(): boolean {

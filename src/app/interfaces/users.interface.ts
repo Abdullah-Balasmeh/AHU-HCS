@@ -12,6 +12,7 @@ export interface Role {
 export interface Patient {
     id: string;
     name: string;
+    password?:string;
     gender: "Male" | "Female";
     state:string;
     status: string;

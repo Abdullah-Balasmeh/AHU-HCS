@@ -1,1 +1,24 @@
-<p>patient-page works!</p>
+<div class="logoutBtn btn" (click)="logout()">
+    <span>تسجيل الخروج</span>
+    <img src="./assets/images/logout.png" alt="">
+</div>
+<div class="container">
+    <!-- Pass patient data to the patient-tab component -->
+    <app-patient-tab
+        [patient]="patient"
+        (tabChange)="onTabChange($event)">
+    </app-patient-tab>
+
+    <div>
+        <!-- Conditionally render components based on the selected tab -->
+        <app-patient-info
+            *ngIf="selectedTab === 'patient-info'"
+            [patient]="patient">
+        </app-patient-info>
+
+        <app-patient-report-table
+            *ngIf="selectedTab === 'reports-table'"
+            [patient]="patient">
+        </app-patient-report-table>
+    </div>
+</div>

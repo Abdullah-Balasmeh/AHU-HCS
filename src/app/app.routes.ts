@@ -1,18 +1,25 @@
 import { Routes } from '@angular/router';
-
-import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 
 export const routes: Routes = 
 [
     {
         path:'',
-        redirectTo:'login',
+        redirectTo:'home',
         pathMatch:'full',
     },
     {
+        path:'home',
+        component:HomePageComponent,
+    },
+    {
         path:'login',
-        component: LoginPageComponent,
+        loadComponent:()=>import("./pages/login-page/login-page.component").then(c => c.LoginPageComponent),
+    },
+    {
+        path:'login-patient',
+        loadComponent:()=>import("./pages/login-patient-page/login-patient-page.component").then(c => c.LoginPatientPageComponent),
     },
     {
         path:'admin',
@@ -54,7 +61,7 @@ export const routes: Routes =
     },
     {
     path:'**',
-        redirectTo:'login',
+        redirectTo:'home',
     },
     
 
