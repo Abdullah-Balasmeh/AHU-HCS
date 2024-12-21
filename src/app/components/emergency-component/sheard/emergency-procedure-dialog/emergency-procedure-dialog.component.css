@@ -1,0 +1,67 @@
+.dialog-box{
+    margin-top: 30px;
+}
+.modal-title{
+    width: 100%;
+    background: #4D95A7;
+    color: #E8E8E8;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    border-radius: 10px 10px 0 0;
+}
+.modal-content{
+    height: max-content;
+    max-width: 100%;
+    min-width: 600px;
+    border: none;
+    position: relative;
+    justify-self: center;
+    border-radius: 0 0 10px 10px ;
+    background-color: #F0F0F0;
+    padding: 5px 10px 5px;
+}
+
+/* Input box styling */
+.input-box input {
+    min-width: 50px;
+    max-width: 100%;
+    field-sizing: content;
+    padding: 5px;
+    background-color: #F0F0F0;
+    border: 1px solid #4D95A7;
+    border-radius: 10px;
+    outline: none;
+    font-size: 18px;
+    
+}
+
+.input-box-exam{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 16px;
+}
+.input-box-exam input{
+    font-size: 16px;
+    text-align: center;
+    margin: 5px;
+}
+    
+.input-box-exam label{
+    margin: 3px;
+}
+    /* buttons */
+.btn , .closeColor {
+    width: 40%; /* Set the button width less than 100% */
+    margin: 50px 27px; /* Center the button horizontally */
+}
+.input-box-exam span{
+    font-weight: bold;
+}
+
+.dropdown-box{
+margin-top: 10px;
+}

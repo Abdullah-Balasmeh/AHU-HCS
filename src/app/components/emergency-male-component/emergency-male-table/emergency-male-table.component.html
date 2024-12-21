@@ -1,0 +1,67 @@
+<!-- Main Table -->
+<div class="container" *ngIf="showTable">
+    <div class="table-title">
+        <h2>سجل الطوارئ</h2>
+        <div id="close-btn" (click)="reset()">
+            <i class="bi bi-x-lg"></i>
+        </div>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>الاسم</th>
+                <th>الرقم الجامعي/الوظيفي</th>
+                <th>الحالة</th>
+                <th>الفئة</th>
+                <th>عرض</th>
+            </tr>
+        </thead>
+        <div class="loading primaryColor btn" *ngIf="isLoading"><app-loading-image></app-loading-image></div>
+        <tbody>
+            <tr *ngFor="let patient of filteredPatients; let index = index">
+                <td>{{ index + 1 }}</td>
+                <td>{{ patient.name }}</td>
+                <td>{{ patient.id }}</td>
+                <td>{{ patient.state }}</td>
+                <td>{{ patient.type }}</td>
+                <td>
+                    <button
+                        class="table-btn"
+                        id="icon-edit"
+                        (click)="openEmergencyDialog(patient)"
+                        *ngIf="patient.state === 'طوارئ'">
+                        <i class="bi bi-eye"></i>
+                    </button>
+                    <button
+                        class="table-btn"
+                        id="icon-edit"
+                        (click)="openFollowingTab(patient)"
+                        *ngIf="patient.state !== 'طوارئ'">
+                        <i class="bi bi-eye"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<app-emergency-procedure-dialog
+    *ngIf="showEmergencyDialog"
+    [patient]="selectedPatient"
+    (close)="closeAll()"></app-emergency-procedure-dialog>
+
+<div class="container" *ngIf="showFollowingTab">
+    <app-following-tab 
+        (close)="closeAll()"
+        (tabChange)="onTabChange($event)">
+    </app-following-tab>
+    <div>
+        <app-bp-table *ngIf="selectedTab === 'B.P'"
+        [patient]="selectedPatient"></app-bp-table>
+        <app-diabetes-table
+            *ngIf="selectedTab === 'diabetes'"
+            [patient]="selectedPatient"></app-diabetes-table>
+    </div>
+</div>

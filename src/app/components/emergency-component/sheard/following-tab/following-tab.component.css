@@ -1,0 +1,45 @@
+
+h1{
+    margin-bottom: 20px;
+}
+
+/* Tab slider position */
+#tabBP-1:checked ~ nav .slider {
+    right: 0%;
+    width: 50%;
+}
+
+#tabS-2:checked ~ nav .slider {
+    right: 50%;
+    width: 48%;
+}
+.table-title{
+    display: inline-flex;
+}
+.table-title h2{
+    white-space: nowrap;
+    align-self: center;
+    justify-self: center;
+    margin: 0 auto;
+    font-size: 24px;  
+}
+#close-btn{
+    display: flex;
+    flex-direction: row;
+    justify-self: end;
+    margin: 10px 0 10px 10px;
+    background-color: #4D95A7;
+    padding: 6px 10px;
+    border-radius: 10px;
+    font-weight: bolder;
+}
+#close-btn:focus {
+    outline: 0;
+}
+
+#close-btn:active {
+    transform: scale(0.98);
+}
+#close-btn:hover{
+    background-color: #e70f0f;
+}

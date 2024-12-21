@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-list-tab',
@@ -8,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrl: './list-tab.component.css'
 })
 export class ListTabComponent {
-
+  @Output() closeTab = new EventEmitter<void>(); // Event to notify parent
+  @Output() tabChange = new EventEmitter<string>();
+  onClose() {
+    this.closeTab.emit(); // Emit the event
+  }
+  selectTab(tab: string) {
+      this.tabChange.emit(tab);
+  }
 }

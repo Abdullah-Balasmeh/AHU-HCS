@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="table-title">
+        <h2>طلب العلاجات</h2>
+        <div id="close-btn" (click)="reset()">
+            <i class="bi bi-x-lg"></i>
+        </div>
+    </div>
+    <hr>
+    <form>
+        <div class="header-input">
+            <div class="input-box">
+                <h6 class="text-type">الوصف:</h6>
+                <input type="text" id="EditDescription" required
+                    autocomplete="off">
+            </div>
+            <div class="input-box">
+                <h6 class="text-type">الكمية:</h6>
+                <input type="text" id="EditQuantity" required autocomplete="off"
+                    maxlength="5" required
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+            </div>
+            <div class="input-box">
+                <h6 class="text-type">الوحدة:</h6>
+                <input type="text" id="EditUnit" required autocomplete="off">
+            </div>
+            <div class="input-box">
+                <h6 class="text-type note">الملاحظات:</h6>
+                <textarea class="textarea-note"
+                    rows="2" autocomplete="off"></textarea>
+            </div>
+            <button class="btn primaryColor">إضافة علاج</button>
+        </div>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>الوصف</th>
+                <th>الكمية</th>
+                <th>الوحدة</th>
+                <th>الملاحظات</th>
+                <th>الإجراءات</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Table Rows -->
+        </tbody>
+    </table>
+
+    <div class="footer-btn">
+        <button class="btn primaryColor">إرسال</button>
+    </div>
+</div>
+
