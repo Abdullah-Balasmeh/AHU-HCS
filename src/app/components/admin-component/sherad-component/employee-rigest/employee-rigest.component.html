@@ -1,0 +1,46 @@
+<form>
+    <div class="Box-grid">
+        <div class="input-box" id="epmNum">
+            <h6 class="text-type">رقم الموظف:</h6>
+            <input
+                class="inputText"
+                type="text"
+                maxlength="12"
+                required
+                oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+                autocomplete="off">
+        </div>
+        <div class="input-box" id="empName">
+            <h6 class="text-type">اسم الموظف:</h6>
+            <input
+                class="inputText"
+                type="text">
+        </div>
+        <div class="input-box" id="empPassword">
+            <h6 class="text-type">كلمة المرور:</h6>
+            <input
+                class="inputText"
+                type="text"
+                minlength="4"
+                maxlength="26">
+        </div>
+        <div class="input-box" id="empConfPassword">
+            <h6 class="text-type">تأكيد كلمة المرور:</h6>
+            <input
+                class="inputText"
+                type="text"
+                minlength="4"
+                maxlength="26">
+        </div>
+        <div id="empJob">
+            <h6 class="text-type">الوظيفة:</h6>
+            <app-multi-select-dropdown
+                placeHolder="الوظيفة"
+                [options]="['Australia', 'Bermuda', 'Canada', 'Denmark', 'France']">
+            </app-multi-select-dropdown>
+        </div>
+        <div class="footer-btn">
+            <button type="btn" class="btn primaryColor">تسجيل</button>
+        </div>
+    </div>
+</form>

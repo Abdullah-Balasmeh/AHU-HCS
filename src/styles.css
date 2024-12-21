@@ -68,9 +68,10 @@ body {
 }
 /* container that contain tabs */
 .container {
+    min-width: fit-content;
     width: max-content;
     height: max-content;
-    max-height: 700px;
+    max-height: 750px;
     max-width: 1500px;
     background-color: #fafafa;
     padding: 20px;
