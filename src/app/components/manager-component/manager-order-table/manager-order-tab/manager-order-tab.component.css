@@ -1,0 +1,37 @@
+/* Active tab text color */
+#tabP-1:checked ~ .nav-box nav label .tab-1,
+#tabH-2:checked ~ .nav-box nav label .tab-2{
+    color: #AEDDDC;
+}
+/* Tab slider position */
+#tabP-1:checked ~ nav .slider {
+    right: 0%;
+    width: 50%;
+}
+
+#tabH-2:checked ~ nav .slider {
+    right: 50%;
+    width: 50%;
+}
+#close-btn{
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+    margin: 10px 0 10px 10px;
+    background-color: #4D95A7;
+    padding: 6px 10px;
+    border-radius: 10px;
+    font-weight: bolder;
+    width: max-content;
+}
+#close-btn:focus {
+    outline: 0;
+}
+
+#close-btn:active {
+    transform: scale(0.98);
+}
+#close-btn:hover{
+    background-color: #e70f0f;
+}
+
