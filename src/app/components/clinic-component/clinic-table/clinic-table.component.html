@@ -1,0 +1,35 @@
+<div class="table-title">
+    <h2>سجل العيادة</h2>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>الرقم</th>
+            <th>الاسم</th>
+            <th>الرقم الجامعي/الوظيفي</th>
+            <th>الحالة</th>
+            <th>الفئة</th>
+            <th>عرض</th>
+        </tr>
+    </thead>
+    <div class="loading primaryColor btn" *ngIf="isLoading"><app-loading-image></app-loading-image></div>
+    <tbody *ngIf="!isLoading">
+        <tr *ngFor="let patient of filteredPatients; let index = index">
+            <td>{{ index + 1 }}</td>
+            <td>{{ patient.name }}</td>
+            <td>{{ patient.id }}</td>
+            <td>{{ patient.state }}</td>
+            <td>{{ patient.type }}</td>
+            <td>
+                <button
+                    class="table-btn"
+                    id="icon-edit"
+                    (click)="onViewDetails()">
+                    <i class="bi bi-eye"></i>
+                </button>
+
+            </td>
+        </tr>
+    </tbody>
+</table>

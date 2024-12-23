@@ -1,0 +1,41 @@
+<div class="nav-box">
+    <div class="table-title">
+        <div id="close-btn" (click)="onClose()"><i class="bi bi-x-lg"></i></div>
+        <h2>إجراءات العيادة</h2>
+    </div>
+    <input
+        type="radio"
+        name="slider"
+        id="tabP-1"
+        (change)="selectTab('prescription')"
+        [checked]="selectedTab === 'prescription'">
+    <input
+        type="radio"
+        name="slider"
+        id="tabH-2"
+        (change)="selectTab('medical')"
+        [checked]="selectedTab === 'medical'">
+    <input
+        type="radio"
+        name="slider"
+        id="tabT-3"
+        (change)="selectTab('reports')"
+        [checked]="selectedTab === 'reports'">
+    <nav>
+        <label for="tabP-1" class="tab-1">وصفة طبية</label>
+        <label for="tabH-2" class="tab-2">الإجراء الطبي</label>
+        <label for="tabT-3" class="tab-3">التقارير</label>
+        <div class="slider primaryColor"></div>
+    </nav>
+</div>
+
+<!-- Content -->
+<div *ngIf="selectedTab === 'prescription'">
+    <app-prescription></app-prescription>
+</div>
+<div *ngIf="selectedTab === 'medical'">
+    <app-clinic-procedure></app-clinic-procedure>
+</div>
+<div *ngIf="selectedTab === 'reports'">
+    <app-report-section></app-report-section>
+</div>

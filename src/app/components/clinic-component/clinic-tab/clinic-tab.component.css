@@ -1,0 +1,50 @@
+h2{
+    white-space: nowrap;
+    align-self: center;
+    justify-self: center;
+    font-size: 24px;
+}
+#close-btn{
+    display: flex;
+    flex-direction: row;
+    justify-self: end;
+    margin: 10px 0 10px 10px;
+    background-color: #4D95A7;
+    padding: 6px 10px;
+    border-radius: 10px;
+    font-weight: bolder;
+}
+#close-btn:focus {
+    outline: 0;
+}
+
+#close-btn:active {
+    transform: scale(0.98);
+}
+#close-btn:hover{
+    background-color: #e70f0f;
+}
+/* Active tab text color */
+#tabP-1:checked ~ .nav-box nav label .tab-1,
+#tabH-2:checked ~ .nav-box nav label .tab-2,
+#tabT-3:checked ~ .nav-box nav label .tab-3 {
+    color: #AEDDDC;
+}
+/* Tab slider position */
+#tabP-1:checked ~ nav .slider {
+    right: 0%;
+    width: 30%;
+}
+
+#tabH-2:checked ~ nav .slider {
+    right: 35%;
+    width: 35%;
+}
+
+#tabT-3:checked ~ nav .slider {
+    right: 75%;
+    width: 23%;
+}
+
+
+

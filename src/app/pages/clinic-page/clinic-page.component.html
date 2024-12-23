@@ -1,1 +1,8 @@
-<p>clinic-page works!</p>
+<div class="container shadowColor">
+    <app-clinic-table *ngIf="showTable" (viewDetails)="toggleView()"></app-clinic-table>
+    <app-clinic-tab *ngIf="!showTable" (closeTab)="toggleView()"></app-clinic-tab>
+
+
+</div>
+
+

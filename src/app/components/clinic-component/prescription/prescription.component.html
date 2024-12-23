@@ -1,0 +1,21 @@
+<div class="content">
+    <form>
+        <div class="Box-grid">
+            <div id="medicalConditionList">
+                <label for="search" class="text-type">المرض:</label>
+                <app-multi-select-dropdown
+                placeHolder="مرض"
+                    [options]="['Australia', 'Bermuda', 'Canada', 'Denmark', 'France']"></app-multi-select-dropdown>
+            </div>
+            <div id="treatmentList">
+                <label for="search" class="text-type">العلاج:</label>
+                <app-multi-select-dropdown
+                placeHolder="علاج"
+                    [options]="['Australia', 'Bermuda', 'Canada', 'Denmark', 'France']"></app-multi-select-dropdown>
+            </div>
+        </div>
+        <div class="footer-btn">
+            <button type="button" class="btn primaryColor">حفظ</button>
+        </div>
+    </form>
+</div>
