@@ -1,14 +1,6 @@
-<div class="dialog-box shadowColor">
-    <div class="modal-title">
-        <h4>الإجراء الطبي</h4>
-    </div>
-    <form action="#" class="modal-content">
+<div class="content">
+    <form>
         <div>
-            <h6 class="text-type">اسم المريض:</h6>
-            <div class="input-box">
-                <input type="text" id="patientName" readonly value="{{patient.name}}"/>
-            </div>
-
             <h6 class="text-type">الفحوصات:</h6>
             <div class="check-inputs-box">
                 <div class="row-check">
@@ -120,12 +112,8 @@
         </div>
         <div class="footer-btn">
             <button type="submit" class="btn primaryColor">حفظ</button>
-            <button
-                type="button"
-                class="btn closeColor"
-                (click)="closeDialog()">
-                اغلاق
-            </button>
         </div>
     </form>
 </div>
+
+

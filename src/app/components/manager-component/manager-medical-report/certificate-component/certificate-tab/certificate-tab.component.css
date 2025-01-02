@@ -1,18 +1,13 @@
-h2{
-    white-space: nowrap;
-    align-self: center;
-    justify-self: center;
-    font-size: 24px;
-}
 #close-btn{
     display: flex;
     flex-direction: row;
-    justify-self: end;
+    align-self: flex-end;
     margin: 10px 0 10px 10px;
     background-color: #4D95A7;
     padding: 6px 10px;
     border-radius: 10px;
     font-weight: bolder;
+    width: max-content;
 }
 #close-btn:focus {
     outline: 0;
@@ -26,30 +21,18 @@ h2{
 }
 /* Active tab text color */
 #tabP-1:checked ~ .nav-box nav label .tab-1,
-#tabH-2:checked ~ .nav-box nav label .tab-2,
-#tabT-3:checked ~ .nav-box nav label .tab-3,
-#tabP-2checked ~ .nav-box nav label .tab-4{
+#tabH-2:checked ~ .nav-box nav label .tab-2 {
     color: #AEDDDC;
 }
 /* Tab slider position */
-#tabP-2:checked ~ nav .slider {
-    right: 0%;
-    width: 30%;
-}
 #tabP-1:checked ~ nav .slider {
-    right: 34%;
-    width: 20%;
+    right: 0%;
+    width: 47%;
 }
 
 #tabH-2:checked ~ nav .slider {
-    right: 57%;
-    width: 23%;
+    right: 53%;
+    width: 45%;
 }
-
-#tabT-3:checked ~ nav .slider {
-    right: 83%;
-    width: 15%;
-}
-
 
 

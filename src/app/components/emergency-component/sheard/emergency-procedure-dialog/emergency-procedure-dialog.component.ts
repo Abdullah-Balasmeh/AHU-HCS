@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { MultiSelectDropdownComponent } from '../../../shared/dropdown-menu/dropdown-menu.component';
 
 @Component({
-  selector: 'app-emergency-procedure-dialog',
+  selector: 'app-emergency-procedure',
   standalone: true,
   imports: [MultiSelectDropdownComponent,CommonModule, FormsModule],
   templateUrl: './emergency-procedure-dialog.component.html',
@@ -17,11 +17,7 @@ export class EmergencyProcedureDialogComponent {
   exam2Checked = false;
   exam3Checked = false;
   exam4Checked = false;
-  @Output() close = new EventEmitter<void>(); // Event emitter to notify parent
-
-  closeDialog(): void {
-    this.close.emit(); // Emit the close event
-  }
+  
   // Handle numeric input sanitization
   onNumberInput(event: Event): void {
     const input = event.target as HTMLInputElement;

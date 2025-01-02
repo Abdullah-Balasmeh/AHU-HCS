@@ -47,10 +47,23 @@
 </div>
 
 
-<app-emergency-procedure-dialog
-    *ngIf="showEmergencyDialog"
-    [patient]="selectedPatient"
-    (close)="closeAll()"></app-emergency-procedure-dialog>
+
+
+
+    <div class="container" *ngIf="showEmergencyDialog">
+        <app-emergency-tab 
+            (close)="closeAll()"
+            (tabChange)="onTabChange($event)">
+        </app-emergency-tab>
+        <div>
+            <app-patient-info-clinic *ngIf="selectedTab === 'patient-info'"
+            [patient]="selectedPatient"></app-patient-info-clinic>
+            <app-emergency-procedure
+                *ngIf="selectedTab === 'emergency-procedure'"
+                [patient]="selectedPatient"></app-emergency-procedure>
+        </div>
+    </div>
+    
 
 <div class="container" *ngIf="showFollowingTab">
     <app-following-tab 

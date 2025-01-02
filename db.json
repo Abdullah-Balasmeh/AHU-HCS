@@ -173,7 +173,50 @@
     {
       "id": "120200612056",
       "name": "عبدالله عدنان عبداللطيف بلاسمه",
-      "password": "1234"
+      "password":"1234"
+    },
+    {
+      "id": "120200612056",
+      "name": "عبدالله عدنان عبداللطيف بلاسمه",
+      "gender": "Male",
+      "state": "متابعة الضغط/السكري",
+      "status": "1",
+      "type": "طالب",
+      "date": {
+        "enterDate": "",
+        "leaveDate": ""
+      },
+      "medicalRecord": {
+        "bloodType": "",
+        "medicalHistory": [],
+        "allergies": [],
+        "medications": [],
+        "clinicProcedures": [],
+        "emergencyProcedures": {
+          "BP": {
+            "BP-Up": "",
+            "BP-Down": ""
+          },
+          "temp": "",
+          "pulse": "",
+          "resp": "",
+          "procedures": []
+        },
+        "followReadings": {
+          "BP": [],
+          "diabetes": []
+        },
+        "prescription": {
+          "medicalCondition": [],
+          "medicine": [],
+          "dosage": ""
+        },
+        "medicalReport": {
+          "reportName": "",
+          "medicalCondition": [],
+          "recommendations": []
+        }
+      }
     },
     {
       "id": "120200612056",
@@ -1001,6 +1044,49 @@
       "type": "طالب",
       "date": {
         "enterDate": "12/21/2024, 08:20:52 PM",
+        "leaveDate": ""
+      },
+      "medicalRecord": {
+        "bloodType": "",
+        "medicalHistory": [],
+        "allergies": [],
+        "medications": [],
+        "clinicProcedures": [],
+        "emergencyProcedures": {
+          "BP": {
+            "BP-Up": "",
+            "BP-Down": ""
+          },
+          "temp": "",
+          "pulse": "",
+          "resp": "",
+          "procedures": []
+        },
+        "followReadings": {
+          "BP": [],
+          "diabetes": []
+        },
+        "prescription": {
+          "medicalCondition": [],
+          "medicine": [],
+          "dosage": ""
+        },
+        "medicalReport": {
+          "reportName": "",
+          "medicalCondition": [],
+          "recommendations": []
+        }
+      }
+    },
+    {
+      "id": "120200612056",
+      "name": "عبدالله عدنان عبداللطيف بلاسمه",
+      "gender": "Male",
+      "state": "متابعة الضغط/السكري",
+      "status": "1",
+      "type": "طالب",
+      "date": {
+        "enterDate": "01/01/2025, 08:00:55 PM",
         "leaveDate": ""
       },
       "medicalRecord": {

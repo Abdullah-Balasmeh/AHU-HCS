@@ -1,0 +1,41 @@
+<div class="content whiteColor">
+    <form>
+        <div class="Box-grid">
+            <div id="patientName">
+                <h6 class="text-type">اسم المريض:</h6>
+                <div class="input-box">
+                    <input type="text" id="patientName" readonly value="{{patient.name}}"/>
+                </div>
+            </div>
+            <div id="bloodTypeList">
+                <label for="search" class="text-type">زمرة الدم:</label>
+                <app-dropdown-list
+                    placeHolder="زمرة الدم"
+                    [options]="['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']">
+                </app-dropdown-list>
+            </div>
+            <div id="allergyList">
+                <label for="search" class="text-type">حساسية:</label>
+                <app-multi-select-dropdown
+                    placeHolder="حساسية"
+                    [options]="['Australia', 'Bermuda', 'Canada', 'Denmark', 'France']">
+                </app-multi-select-dropdown>
+            </div>
+            <div id="medicalConditionList">
+                <label for="search" class="text-type">الأمراض المزمنة:</label>
+                <app-multi-select-dropdown
+                    placeHolder="مرض"
+                    [options]="['Australia', 'Bermuda', 'Canada', 'Denmark', 'France']">
+                </app-multi-select-dropdown>
+            </div>
+            <div id="treatmentList">
+                <label for="search" class="text-type">العلاج:</label>
+                <app-multi-select-dropdown
+                    placeHolder="علاج"
+                    [options]="['Australia', 'Bermuda', 'Canada', 'Denmark', 'France']">
+                </app-multi-select-dropdown>
+            </div>
+        </div>
+
+    </form>
+</div>

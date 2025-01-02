@@ -7,18 +7,20 @@ import { BpTableComponent } from "../../emergency-component/sheard/bp-table/bp-t
 import { LoadingImageComponent } from "../../shared/loading-image/loading-image.component";
 import { EmergencyProcedureDialogComponent } from '../../emergency-component/sheard/emergency-procedure-dialog/emergency-procedure-dialog.component';
 import { DiabetesTableComponent } from '../../emergency-component/sheard/diabetes-table/diabetes-table.component';
+import { PatientInfoClinicComponent } from "../../shared/patient-info-clinic/patient-info-clinic.component";
+import { EmergencyTabComponent } from "../../emergency-component/sheard/emergency-tab/emergency-tab.component";
 
 @Component({
   selector: 'app-emergency-male-table',
   standalone: true,
-  imports: [CommonModule, EmergencyProcedureDialogComponent, FollowingTabComponent, BpTableComponent, DiabetesTableComponent, LoadingImageComponent],
+  imports: [CommonModule, EmergencyProcedureDialogComponent, FollowingTabComponent, BpTableComponent, DiabetesTableComponent, LoadingImageComponent, PatientInfoClinicComponent, EmergencyTabComponent],
   templateUrl: './emergency-male-table.component.html',
   styleUrl: './emergency-male-table.component.css'
 })
 export class EmergencyMaleTableComponent {
   @Output() resetEvent = new EventEmitter<void>(); // Emits reset event
   patients: any[] = []; // Holds the patient data
-  selectedTab: string = 'B.P'; // Default tab
+  selectedTab: string='';
   showTable: boolean = true; // Controls visibility of the main table
   showEmergencyDialog: boolean = false; // Controls visibility of Emergency Dialog
   showFollowingTab: boolean = false; // Controls visibility of the Following Tab
@@ -60,6 +62,7 @@ export class EmergencyMaleTableComponent {
 
   // Show Emergency Dialog and hide the table
   openEmergencyDialog(patient: any): void {
+    this.selectedTab= 'patient-info';
     this.selectedPatient = patient; // Set the selected patient
     this.showTable = false;
     this.showEmergencyDialog = true;
@@ -68,6 +71,7 @@ export class EmergencyMaleTableComponent {
 
   // Show Following Tab and hide the table
   openFollowingTab(patient: any): void {
+    this.selectedTab= 'B.P';
     this.selectedPatient = patient; // Set the selected patient
     this.showTable = false;
     this.showFollowingTab = true;
