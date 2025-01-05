@@ -1,1 +1,62 @@
-<p>manager-analysis-report works!</p>
+<div class="container">
+    <div class="table-title">
+        <h2>سجل المركز الصحي</h2>
+        <div id="close-btn" (click)="reset()">
+            <i class="bi bi-x-lg"></i>
+        </div>
+    </div>
+    <hr>
+    <form>
+        <div class="header-input">
+            <div class="input-box">
+                <h6 class="text-type">تاريخ البحث:</h6>
+                <input
+                type="date"
+                class="inputText">
+            </div>
+            <div class="input-box" id="tNum">
+                <h6 class="text-type">رقم المريض:</h6>
+                <input
+                class="inputText"
+                type="text"
+                maxlength="12"
+                formControlName="patientId"
+                required
+                oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+                autocomplete="off">
+                <div id="search-container">
+                        <button type="button" class="btn text-type primaryColor search-btn" 
+                        >بحث</button>
+                </div>
+            </div>
+            <div class="input-box">
+                <h6 for="search" class="text-type">المادة:</h6>
+                <app-dropdown-list
+                    placeHolder="مادة"
+                    [options]="['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-']">
+                </app-dropdown-list>
+            </div>
+            <div id="search-container">
+                <button type="button" class="btn text-type primaryColor search-btn" 
+                >بحث</button>
+        </div>
+        </div>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>الوصف</th>
+                <th>الكمية</th>
+                <th>الوحدة</th>
+                <th>الملاحظات</th>
+                <th>الإجراءات</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Table Rows -->
+        </tbody>
+    </table>
+</div>
+

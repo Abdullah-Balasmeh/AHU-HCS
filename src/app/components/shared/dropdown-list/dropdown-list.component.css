@@ -20,7 +20,7 @@
     width: 100%;
     background: #F0F0F0;
     border: 1px solid #4d95a7;
-    max-height: 140px;
+    max-height: 100px;
     overflow-y: auto;
     z-index: 1000;
     border-bottom-left-radius: 10px;

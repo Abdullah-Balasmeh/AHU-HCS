@@ -86,6 +86,7 @@ export class LoginPageComponent {
 
   // Handle form submission
   onSubmit(): void {
+    debugger;
     this.errorMessage.set('');
     const userID = this.loginForm.value.userID?.trim();
     const password = this.loginForm.value.password?.trim();
